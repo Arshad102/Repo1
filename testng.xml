@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestingBaba">
+  <test name="Textbox">
+    <classes>
+      <class name="testingbaba_tests.Textbox_Test"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Checkbox">
+	  <classes>
+		  <class name="testingbaba_tests.CheckBox_Test"/>
+	  </classes>
+  </test>
+    <test name="RadioButton">
+	  <classes>
+		  <class name="testingbaba_tests.RadioButton_Tests"/>
+	  </classes>
+  </test>
+      <test name="Web_Tables">
+	  <classes>
+		  <class name="testingbaba_tests.WebTables_Tests"/>
+	  </classes>
+  </test>
+      <test name="RightDouble_click">
+	  <classes>
+		  <class name="testingbaba_tests.Buttons_Tests"/>
+	  </classes>
+  </test>
+</suite> <!-- Suite -->
