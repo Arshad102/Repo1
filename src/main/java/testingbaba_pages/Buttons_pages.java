@@ -33,6 +33,7 @@ public class Buttons_pages extends BaseLibrary
 		Buttons.click();
 		doubleclick(Doubleclick);
 		rightclick(right_click);
+		getScreenshot("passed", "ClickonButtons");
 		Singleclick.click();	
 	}
 }

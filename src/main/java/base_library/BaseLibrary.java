@@ -1,20 +1,24 @@
 package base_library;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.sl.usermodel.Insets2D;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
@@ -87,8 +91,31 @@ public class BaseLibrary {
 		ArrayList<String> tabs=new ArrayList<String>(set);
 		driver.switchTo().window(tabs.get(tabno));
 	}
-
-	public void clic(WebElement ele) 
+	
+	public void elementtobeClickable(WebElement ele, int time) 
+	{
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.elementToBeClickable(ele));
+	}
+	public void clicke(WebElement ele)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 3);
+		wait.until(ExpectedConditions.elementToBeClickable(ele));
+		ele.click();
+	}
+		public void getScreenshot(String foldername, String filename) 
+		{
+			String location = System.getProperty("user.dir");
+			try 
+			{
+			String path=location+"\\screenshot\\"+foldername+"\\"+filename+".png";
+			EventFiringWebDriver efw = new EventFiringWebDriver(driver);
+			 File src =efw.getScreenshotAs(OutputType.FILE);
+			 FileUtils.copyFile(src, new File(path));
+			} catch (Exception e) {
+			}
+		}
+	public void Click(WebElement ele) 
 	{
 		ele.click();
 	}
