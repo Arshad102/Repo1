@@ -2,7 +2,9 @@ package base_library;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -25,6 +27,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import net.bytebuddy.agent.builder.AgentBuilder.Default.Transformation.Simple;
 
 public class BaseLibrary {
 
@@ -115,6 +118,15 @@ public class BaseLibrary {
 			} catch (Exception e) {
 			}
 		}
+		public String getdatetime() 
+		{
+			String date="";
+			SimpleDateFormat sdf = new SimpleDateFormat("dd_mm_yyyy hh_MM_ss_a");
+			Date db = new Date();
+			date = sdf.format(db);
+			return date;
+		}
+		
 	public void Click(WebElement ele) 
 	{
 		ele.click();
@@ -131,8 +143,10 @@ public class BaseLibrary {
 		}
 	}
 
-	// ===================TearDown=================================
-	public void shutDown() {
+	// ===================TearDown================================
+	public void shutDown() 
+	{
 		driver.quit();
 	}
+	
 }
