@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-24T18:00:43Z" name="Default suite" finished-at="2023-02-24T18:01:29Z" duration-ms="45772">
+  <suite started-at="2023-03-08T18:48:08Z" name="Default suite" finished-at="2023-03-08T18:48:49Z" duration-ms="41093">
     <groups>
     </groups>
-    <test started-at="2023-02-24T18:00:43Z" name="Default test" finished-at="2023-02-24T18:01:29Z" duration-ms="45772">
-      <class name="testingbaba_tests.Buttons_Tests">
-        <test-method is-config="true" signature="LaunchChrome()[pri:0, instance:testingbaba_tests.Buttons_Tests@29526c05]" started-at="2023-02-24T18:00:43Z" name="LaunchChrome" finished-at="2023-02-24T18:01:28Z" duration-ms="44622" status="PASS">
+    <test started-at="2023-03-08T18:48:08Z" name="Default test" finished-at="2023-03-08T18:48:49Z" duration-ms="41093">
+      <class name="testingbaba_tests.UploadDownload_Tests">
+        <test-method is-config="true" signature="launchChrome()[pri:0, instance:testingbaba_tests.UploadDownload_Tests@7fb95505]" started-at="2023-03-08T18:48:08Z" name="launchChrome" finished-at="2023-03-08T18:48:44Z" duration-ms="35949" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LaunchChrome -->
-        <test-method signature="elementbutton()[pri:0, instance:testingbaba_tests.Buttons_Tests@29526c05]" started-at="2023-02-24T18:01:28Z" name="elementbutton" finished-at="2023-02-24T18:01:29Z" duration-ms="935" status="PASS">
+        </test-method> <!-- launchChrome -->
+        <test-method signature="ClickElementButton()[pri:0, instance:testingbaba_tests.UploadDownload_Tests@7fb95505]" started-at="2023-03-08T18:48:44Z" name="ClickElementButton" finished-at="2023-03-08T18:48:49Z" duration-ms="4675" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- elementbutton -->
-        <test-method is-config="true" signature="Quit()[pri:0, instance:testingbaba_tests.Buttons_Tests@29526c05]" started-at="2023-02-24T18:01:29Z" name="Quit" finished-at="2023-02-24T18:01:29Z" duration-ms="195" status="PASS">
+        </test-method> <!-- ClickElementButton -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testingbaba_tests.UploadDownload_Tests@7fb95505]" started-at="2023-03-08T18:48:49Z" name="quit" finished-at="2023-03-08T18:48:49Z" duration-ms="402" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Quit -->
-      </class> <!-- testingbaba_tests.Buttons_Tests -->
+        </test-method> <!-- quit -->
+      </class> <!-- testingbaba_tests.UploadDownload_Tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testingbaba_tests.Buttons_Tests">
+      <class name="testingbaba_tests.UploadDownload_Tests">
         <methods>
-          <include name="isbuttonsclicked"/>
-          <include name="Quit"/>
-          <include name="LaunchChrome"/>
+          <include name="launchChrome"/>
+          <include name="ClickElementButton"/>
+          <include name="quit"/>
         </methods>
-      </class> <!-- testingbaba_tests.Buttons_Tests -->
+      </class> <!-- testingbaba_tests.UploadDownload_Tests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,5 +1,10 @@
 package base_library;
 
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
@@ -27,7 +32,6 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import net.bytebuddy.agent.builder.AgentBuilder.Default.Transformation.Simple;
 
 public class BaseLibrary {
 
@@ -47,7 +51,7 @@ public class BaseLibrary {
 	}
 
 	// -----------------Common Methods--------------------------
-
+//------------------to read from config.properties-----------------
 	public String getReaddata(String key) 
 	{
 		String value = "";
@@ -63,7 +67,7 @@ public class BaseLibrary {
 		}
 		return value;
 	}
-
+//-----------------------------------------to read excel sheet----------------------
 	public String getReaddata(int sheetno, int colno, int rowno) 
 	{
 		String value = "";
@@ -78,34 +82,39 @@ public class BaseLibrary {
 		}
 		return value;
 	}
+//--------------------------------------to double click on an element-------------------	
 	public void doubleclick(WebElement ele) 
 	{
 		Actions act = new Actions(driver);
 		act.doubleClick(ele).perform();
 	}
+//----------------------------to right click on an element----------------------------	
 	public void rightclick(WebElement ele) 
 	{
 		Actions act = new Actions(driver);
 		act.contextClick(ele).perform();
 	}
+//-----------------------------to change window tabs from present to another-------------------------------------
 	public void changeWindow(int tabno) 
 	{
 		Set<String> set=driver.getWindowHandles();
 		ArrayList<String> tabs=new ArrayList<String>(set);
 		driver.switchTo().window(tabs.get(tabno));
 	}
-	
+//-------------------------------to add wait utility------------------------------------	
 	public void elementtobeClickable(WebElement ele, int time) 
 	{
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 	}
+//-------------------------wait for the element to be clickable-----------------------	
 	public void clicke(WebElement ele)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 3);
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 		ele.click();
 	}
+//---------------------------to get screenshot of the result------------------------	
 		public void getScreenshot(String foldername, String filename) 
 		{
 			String location = System.getProperty("user.dir");
@@ -126,7 +135,32 @@ public class BaseLibrary {
 			date = sdf.format(db);
 			return date;
 		}
-		
+//-------------------------to add and upload file---------------------
+
+		public void uploadfile(String path) 
+		{
+			try 
+			{
+				StringSelection sel = new StringSelection(path);
+				 Clipboard tool = Toolkit.getDefaultToolkit().getSystemClipboard();
+				 tool.setContents(sel, null);				 
+				 Robot robot = new Robot();
+				 robot.keyPress(KeyEvent.VK_ENTER);
+				 robot.keyRelease(KeyEvent.VK_ENTER);
+				 robot.keyPress(KeyEvent.VK_CONTROL);
+				 robot.keyPress(KeyEvent.VK_V);
+				 robot.keyRelease(KeyEvent.VK_V);
+				 robot.keyRelease(KeyEvent.VK_CONTROL);
+				 robot.keyPress(KeyEvent.VK_ENTER);
+				 robot.delay(300);
+				 robot.keyRelease(KeyEvent.VK_ENTER);
+				
+			} catch (Exception e) {
+				System.out.println("error in fileupload"+e);
+			}
+			 
+			
+		}
 	public void Click(WebElement ele) 
 	{
 		ele.click();
